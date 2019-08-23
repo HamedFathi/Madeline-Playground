@@ -1,7 +1,9 @@
-import {Aurelia} from 'aurelia-framework'
+import { Aurelia } from 'aurelia-framework'
 import environment from './environment';
-import {PLATFORM} from 'aurelia-pal';
-
+import { PLATFORM } from 'aurelia-pal';
+import * as madeline from 'madeline';
+import * as $ from 'jquery';
+import * as bs from 'bootstrap';
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
