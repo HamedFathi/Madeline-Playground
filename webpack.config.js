@@ -34,6 +34,10 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
     // out-of-date dependencies on 3rd party aurelia plugins
     alias: { 'aurelia-binding': path.resolve(__dirname, 'node_modules/aurelia-binding') }
   },
+  node:
+  {
+    fs: 'empty'
+  },
   entry: {
     app: ['aurelia-bootstrapper']
   },
@@ -157,7 +161,7 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
         use: extractCss ? [{
           loader: MiniCssExtractPlugin.loader
         },
-        'css-loader'
+          'css-loader'
         ] : ['style-loader', ...cssRules]
       },
       {
@@ -168,7 +172,7 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
         use: cssRules
       },
       { test: /\.html$/i, loader: 'html-loader' },
-      { test: /\.ts$/, loader: "ts-loader", options: { reportFiles: [ srcDir+'/**/*.ts'] }, include: karma ? [srcDir, testDir] : srcDir },
+      { test: /\.ts$/, loader: "ts-loader", options: { reportFiles: [srcDir + '/**/*.ts'] }, include: karma ? [srcDir, testDir] : srcDir },
       // embed small images and fonts as Data Urls and larger ones as files:
       { test: /\.(png|gif|jpg|cur)$/i, loader: 'url-loader', options: { limit: 8192 } },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff2' } },
