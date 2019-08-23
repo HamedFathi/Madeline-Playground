@@ -2,5 +2,48 @@
   <textarea ref="editorElem" id="editor" name="editor" rows="30" cols="60"></textarea>
   <textarea ref="resultElem" id="result" readonly name="result" rows="30" cols="60"></textarea>
   <button type="button" click.delegate="convert()">Convert</button>
-
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+              aria-selected="true">HTML/Template/View</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+              aria-selected="false">Javascript/Typescript</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+              aria-controls="contact" aria-selected="false">Aurelia View Model</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div id="htmlEditor"></div>
+          </div>
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <div id="jsTsEditor"></div>
+          </div>
+          <div class="tab-pane fade" id="au" role="tabpanel" aria-labelledby="au-tab">
+            <div id="aureliaEditor"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm">
+        <ul class="nav nav-tabs" id="resultTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="result-tab" data-toggle="tab" href="#result" role="tab"
+              aria-controls="result" aria-selected="true">Result</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="resultContent">
+          <div class="tab-pane fade show active" id="result" role="tabpanel" aria-labelledby="result-tab">
+            <div id="resultEditor"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
