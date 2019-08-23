@@ -1,7 +1,6 @@
 <template>
-  <h1>${message}</h1>
-  <textarea id="editor" name="editor" rows="10" cols="30"></textarea>
-  <textarea id="result" name="result" rows="10" cols="30"></textarea>
-  <button type="button">Click Me!</button>
+  <textarea ref="editorElem" id="editor" name="editor" rows="30" cols="60"></textarea>
+  <textarea ref="resultElem" id="result" readonly name="result" rows="30" cols="60"></textarea>
+  <button type="button" click.delegate="convert()">Convert</button>
 
 </template>
