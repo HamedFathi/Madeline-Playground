@@ -1,13 +1,15 @@
-import { bindable, inject, TaskQueue } from "aurelia-framework";
+import { bindable, inject, TaskQueue, bindingMode } from "aurelia-framework";
 
 @inject(Element, TaskQueue)
 export class AceEditorCustomElement {
 
-  @bindable source: string = '';
+  @bindable({ defaultBindingMode: bindingMode.twoWay }) source: string = '';
   @bindable type: string = 'ts';
 
-  editorElement: HTMLDivElement;
-  editor: any;
+  private editorElement: HTMLDivElement;
+  private editor: any;
+
+  private manualUpdate: boolean = false;
 
   constructor(private element: Element, private taskQueue: TaskQueue) { }
 
@@ -16,9 +18,10 @@ export class AceEditorCustomElement {
   }
 
   sourceChanged(newValue: string) {
-    if (newValue && this.editor) {
+    if (newValue && this.editor && !this.manualUpdate) {
       this.editor.setValue(newValue);
     }
+    this.manualUpdate = false;
   }
 
   private editorJsTs() {
@@ -45,6 +48,11 @@ export class AceEditorCustomElement {
     });
     this.editor.setTheme("ace/theme/textmate");
     this.editor.renderer.setOption("showLineNumbers", false);
+
+    this.editor.getSession().on('change', () => {
+      this.source = this.editor.getValue();
+      this.manualUpdate = true;
+    });
   }
 
   private setEditorType() {

@@ -1,5 +1,7 @@
 import { SourceFileExtractor } from 'madeline';
+import { inject, TaskQueue } from 'aurelia-framework';
 
+@inject(TaskQueue)
 export class App {
 
   private myTsJsSource: string = `export class WhoIsABetterDeveloper {
@@ -13,7 +15,9 @@ export class App {
     */
     fact: boolean = true;
 }`
-;
+    ;
+
+  constructor(private taskQueue: TaskQueue) { }
 
   private convertedResult = '';
 
@@ -24,6 +28,9 @@ export class App {
   }
 
   attached() {
+    this.taskQueue.queueTask(() => this.afterAttached());
+  }
+  afterAttached() {
     this.convert();
   }
 }
