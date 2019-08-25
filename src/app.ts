@@ -4,17 +4,22 @@ import { inject, TaskQueue } from 'aurelia-framework';
 @inject(TaskQueue)
 export class App {
 
-  private myTsJsSource: string = `export class WhoIsABetterDeveloper {
-    /**
-    * @type {string} - This is to joke with Hamed :smirk: :smile:
-    */
-    name: string = 'Shahab';
-
-    /**
-    * @type {boolean} - But, it's true :wink:.
-    */
-    fact: boolean = true;
-}`
+  private myTsJsSource: string = `/**
+  * This is a class.
+  * Just for test!
+  *
+  * @class Greeter - A class with ctor and a method.
+  */
+  class Greeter {
+    greeting: string;
+    constructor(message: string) {
+      this.greeting = message;
+    }
+    // Just says hello :)
+    greet() {
+      return "Hello, " + this.greeting;
+    }
+  }`
     ;
 
   constructor(private taskQueue: TaskQueue) { }
