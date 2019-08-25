@@ -1,17 +1,43 @@
 <template>
-
-  <div class="container-fluid">
+  <div class="container-fluid p-3 mb-5">
+    <div>
+      <img src="https://i.ibb.co/ypX3gC3/Madeline2.png">
+      <p>
+        An experimental library to extract information from Javascript/Typescript source files.
+      </p>
+    </div>
     <div class="row">
-      <div class="col-5">
-        <ace-editor source.bind="myTsJsSource"></ace-editor>
-      </div>
-      <div class="col-1">
-        <button class="btn btn-primary" click.delegate="convert()">
-          Convert >>
-        </button>
-      </div>
       <div class="col-6">
-        <ace-editor type.bind="json" source.bind="convertedResult"></ace-editor>
+        <ul class="nav nav-tabs" id="myTsTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="ts-tab" data-toggle="tab" href="#ts" role="tab" aria-controls="ts"
+              aria-selected="true">Javascript/Typescript</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTsTabContent">
+          <div class="tab-pane fade show active" id="ts" role="tabpanel" aria-labelledby="ts-tab">
+            <br>
+            <ace-editor source.bind="myTsJsSource"></ace-editor>
+            <br />
+            <button class="btn btn-primary" click.delegate="convert()">
+              Convert
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-6" style="height: 150px !important">
+        <ul class="nav nav-tabs" id="myJsonTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="json-tab" data-toggle="tab" href="#json" role="tab" aria-controls="json"
+              aria-selected="true">Result</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myJsonTabContent">
+          <div class="tab-pane fade show active" id="json" role="tabpanel" aria-labelledby="json-tab">
+            <br>
+            <ace-editor type.bind="json" source.bind="convertedResult"></ace-editor>
+          </div>
+        </div>
       </div>
     </div>
 </template>

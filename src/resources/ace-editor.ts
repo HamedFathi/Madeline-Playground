@@ -20,6 +20,7 @@ export class AceEditorCustomElement {
   sourceChanged(newValue: string) {
     if (newValue && this.editor && !this.manualUpdate) {
       this.editor.setValue(newValue);
+      this.editor.clearSelection();
     }
     this.manualUpdate = false;
   }
@@ -43,7 +44,7 @@ export class AceEditorCustomElement {
       enableBasicAutocompletion: true,
       enableLiveAutocompletion: true,
       showPrintMargin: false,
-      maxLines: Infinity,
+      maxLines: 25,
       fontSize: "100%"
     });
     this.editor.setTheme("ace/theme/textmate");
