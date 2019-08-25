@@ -1,2 +1,1 @@
-# Madeline-Playground
-A playground for Madeline project.
+A [playground](https://madeline.netlify.com/) for Madeline project.
