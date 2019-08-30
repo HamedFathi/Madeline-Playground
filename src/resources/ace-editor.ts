@@ -44,7 +44,7 @@ export class AceEditorCustomElement {
       enableBasicAutocompletion: true,
       enableLiveAutocompletion: true,
       showPrintMargin: false,
-      maxLines: 25,
+      maxLines: 20,
       fontSize: "100%"
     });
     this.editor.setTheme("ace/theme/textmate");

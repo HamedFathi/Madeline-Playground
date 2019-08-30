@@ -4136,10 +4136,10 @@ lru-cache@^5.1.1:
   dependencies:
     yallist "^3.0.2"
 
-madeline@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/madeline/-/madeline-0.0.1.tgz#1b013e7eef215cbac4040035668ede803d62d7e2"
-  integrity sha512-SVmI6fmV3alWbwzw1S1yMpYAOz+E5BubuoM9I+xZD0kHo8tM3TdVdfRbMJcG3WjgD+VYMkiTldINW49SzKadTw==
+madeline@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/madeline/-/madeline-0.0.2.tgz#c10508ad05f70ef5c7d8121a29c8c5a83949b7e1"
+  integrity sha512-r8DOeOcUdIDlmJR4Kr/xJX8SRU+v+hBOSwO5s5l56GHqNGrFyAqhV3+aZtGKjmmM1S7yGxD+xgLEklOPLbdPxQ==
   dependencies:
     directory-tree "^2.2.4"
     fast-safe-stringify "^2.0.6"
