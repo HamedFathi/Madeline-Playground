@@ -1,7 +1,7 @@
 {
 	"name": "madeline-playground",
 	"description": "A playground for Madeline project.",
-	"version": "0.0.2",
+	"version": "0.0.4",
 	"keywords": [
 		"typescript",
 		"javascript",
@@ -19,7 +19,7 @@
 	"dependencies": {
 		"aurelia-bootstrapper": "^2.3.2",
 		"aurelia-animator-css": "^1.0.4",
-		"madeline": "^0.0.3"
+		"madeline": "^0.0.4"
 	},
 	"devDependencies": {
 		"aurelia-cli": "^1.0.2",
